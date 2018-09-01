@@ -29,7 +29,7 @@ app.get('/profile/:id', (req, res) => {profile.handleGetProfile(req, res, db)})
 app.put('/image', (req, res) => {image.handleImage(req, res, db)})
 app.post('/imageurl', (req, res) => {image.handleAPICall(req, res, db)})
 
-const po = 3000;
+const po = process.env.PORT||3000;
 app.listen(po, () => {
 	console.log(`app responded on port ${po}`)
 })
